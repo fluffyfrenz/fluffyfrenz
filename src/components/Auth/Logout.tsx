@@ -1,6 +1,6 @@
 // components/Logout.tsx
 import React, { useState } from 'react';
-import { auth } from '../lib/firebase';
+import { auth } from '../../lib/firebase';
 
 const Logout: React.FC = () => {
   const [error, setError] = useState('');

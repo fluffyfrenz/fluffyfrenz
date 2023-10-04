@@ -1,14 +1,16 @@
 // lib/firebase.ts
-
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+
 import firebaseConfig from "../config/firebaseConfig";
 
-// Ensure firebase apps aren't duplicated
-if (firebase.apps.length === 0) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
 }
 
 const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();  // Google Auth Provider
 
-export { auth, firebase };
+export { auth, provider, firebase };
