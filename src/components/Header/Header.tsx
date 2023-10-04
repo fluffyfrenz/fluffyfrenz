@@ -1,7 +1,7 @@
 // components/Header.tsx
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
-import './header.css';
+import './header.module.css';
 
 const Header: React.FC = () => {
   return (
