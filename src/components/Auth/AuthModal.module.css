@@ -1,0 +1,104 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0; 
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.authModal {
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #333;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.authModal:hover {
+    transform: scale(1.02);
+}
+
+.authModal h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.authModal p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.authModal input[type="email"],
+.authModal input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(var(--tile-border-rgb), 0.3);
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    transition: border 0.3s ease;
+}
+
+.authModal input[type="email"]:focus,
+.authModal input[type="password"]:focus {
+    border-color: rgba(var(--callout-rgb), 0.5);
+}
+
+.authModal button {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-start-rgb));
+}
+
+.authModal button:hover {
+    background-color: rgba(var(--callout-rgb), 0.2);
+    transform: translateY(-2px);
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(var(--foreground-rgb));
+    transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+    color: rgba(var(--foreground-rgb), 0.7);
+}
+
+.authModal button:nth-of-type(1),
+.authModal button:nth-of-type(2) {
+    width: 49%;
+    display: inline-block;
+}

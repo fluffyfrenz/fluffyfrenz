@@ -1,6 +1,7 @@
 // components/Logout.tsx
 import React, { useState } from 'react';
 import { auth } from '../../lib/firebase';
+import styles from "./Logout.module.css";
 
 const Logout: React.FC = () => {
   const [error, setError] = useState('');
@@ -20,7 +21,7 @@ const Logout: React.FC = () => {
 
   return (
     <>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
       {error && <div>{error}</div>}
     </>
   );

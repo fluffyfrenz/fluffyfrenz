@@ -1,14 +1,14 @@
 // components/Header.tsx
-import React from 'react';
-import NavBar from '../NavBar/NavBar';
-import './header.module.css';
+import React from "react";
+import NavBar from "../NavBar/NavBar";
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
-  return (
-    <header>
-      <NavBar />
-    </header>
-  );
+    return (
+        <div className={styles.header}>
+            <NavBar />
+        </div>
+    );
 };
 
 export default Header;

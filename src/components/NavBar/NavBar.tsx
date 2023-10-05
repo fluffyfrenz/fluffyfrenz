@@ -1,47 +1,50 @@
 // components/NavBar.tsx
 import React, { useEffect, useState } from "react";
-import { auth, provider } from "../../lib/firebase";
+import { auth } from "../../lib/firebase";
 import firebase from "firebase/compat/app";
 import Logout from "../Auth/Logout";
+import AuthModal from "../Auth/AuthModal";
+import styles from "./NavBar.module.css";
 
 const NavBar: React.FC = () => {
     const [user, setUser] = useState<firebase.User | null>(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             setUser(user);
+            if (user) {
+                setShowModal(false);
+            }
         });
         return () => {
             unsubscribe();
         };
-    }, []);
-
-    const signInWithGoogle = async () => {
-        try {
-            await auth.signInWithPopup(provider);
-        } catch (error) {}
-    };
+    }, [user]);
 
     return (
-        <nav className="bg-blue-500 p-4 flex justify-between items-center">
-            <div className="text-white text-2xl font-bold">FluffyFrenz</div>
-            <div className="flex space-x-4">
-                {/*<a href="#" className="text-white">Home</a>*/}
+        <nav className={styles.nav}>
+            <div>FluffyFrenz</div>
+            <div>
                 {/* ... other nav links */}
                 {user ? (
                     <>
-                        <div className="text-white">
+                        <div>
                             Welcome, {user.displayName || user.email}
+                            <Logout />
                         </div>
-                        <Logout />
+                        
                     </>
                 ) : (
-                    <button
-                        onClick={signInWithGoogle}
-                        className="px-4 py-2 font-bold text-white rounded hover:text-gray"
-                    >
-                        Sign in
-                    </button>
+                    <>
+                        <button
+                            onClick={() => setShowModal(true)}
+                            className={styles.signInButton}
+                        >
+                            Sign in
+                        </button>
+                        {showModal && <AuthModal onClose={() => setShowModal(false)} />}
+                    </>
                 )}
             </div>
         </nav>

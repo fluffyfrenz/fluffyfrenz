@@ -1,0 +1,21 @@
+.logoutButton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(var(--foreground-rgb));
+    background-color: rgba(var(--callout-rgb), 0.8);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none; /* in case you use an <a> tag with this class */
+  }
+  
+  .logoutButton:hover {
+    transform: translateY(-3px);
+    background-color: rgba(var(--callout-rgb), 0.9);
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
+  }
