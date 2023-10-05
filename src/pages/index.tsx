@@ -5,6 +5,7 @@ import HeroSection from '../components/Hero/HeroSection';
 //import FeaturesSection from '../components/Features/FeaturesSection';
 //import AppDownloadSection from '../components/AppDownload/AppDownloadSection';
 //import InstagramSection from '../components/Instagram/InstagramSection';
+import MapComponent from '../components/GoogleMap/MapComponent';
 import Footer from '../components/Footer/Footer';
 
 const Home: React.FC = () => {
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <HeroSection />
+      <MapComponent />
       <Footer />
     </div>
   );
