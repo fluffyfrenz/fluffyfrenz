@@ -7,8 +7,7 @@ const Footer: React.FC = () => {
     return (
         <footer className={styles.footer}>
             <div>
-                <h2>FluffyFrenz</h2>
-                <p className={styles.contact}>Contact: info@fluffyfrenz.com</p>
+                <p>@2023 fluffyfrenz</p>
             </div>
             <div className={styles.socials}>
                 <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
