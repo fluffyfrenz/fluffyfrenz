@@ -6,6 +6,7 @@ import HeroSection from '../components/Hero/HeroSection';
 //import AppDownloadSection from '../components/AppDownload/AppDownloadSection';
 //import InstagramSection from '../components/Instagram/InstagramSection';
 import MapComponent from '../components/GoogleMap/MapComponent';
+import ChatRoom from '../components/Chat/ChatRoom';
 import Footer from '../components/Footer/Footer';
 
 const Home: React.FC = () => {
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <MapComponent />
+      <ChatRoom />
       <Footer />
     </div>
   );
