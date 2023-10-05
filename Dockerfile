@@ -1,27 +1,15 @@
-# Use an official Node.js runtime as the base image
-FROM node:16.20.2
-
-# Set the working directory in the container to /app
+# Build Stage
+FROM node:16.20.2-alpine as build
 WORKDIR /app
-
-# Copy package.json and package-lock.json into the working directory
 COPY package*.json ./
-
-# Install the application dependencies
-RUN npm install
-
-# Copy the rest of the application code into the working directory
+RUN npm install --only=production
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Install serve to serve the built application
-RUN npm install -g serve@11
-
-# Expose port 3000 for the application
+# Run Stage
+FROM node:16.20.2-alpine
+WORKDIR /app
+COPY --from=build /app ./
+USER node
 EXPOSE 3000
-
-# Define the command to run the application
-CMD ["npm", "run", "dev"]
-
+CMD ["npm", "start"]

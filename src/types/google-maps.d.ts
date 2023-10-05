@@ -1,1 +1,3 @@
-declare var google: any;
+declare namespace google {
+    declare var google: any;
+}
