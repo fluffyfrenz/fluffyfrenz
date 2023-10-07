@@ -6,10 +6,40 @@
   padding: 1rem 2rem;
   font-family: var(--font-mono);
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  transition: all var(--transition-speed);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle bottom border for depth */
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* For hover effect, consistency with the title in hero section */
+}
+
+.logo:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Mobile responsiveness adjustments */
+
+@media (max-width: 768px) {
+  .header {
+      padding: 0.8rem 1rem;
+  }
+
+  .logo {
+      font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      padding: 0.5rem 0.8rem;
+  }
+
+  .logo {
+      font-size: 1.1rem;
+  }
 }

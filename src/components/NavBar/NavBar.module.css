@@ -4,7 +4,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--tile-start-rgb);  /* Soft Blue */
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  transition: all var(--transition-speed);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
 .signInButton {
@@ -18,14 +20,41 @@
   border-radius: var(--border-radius);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed);
   text-align: center;
-  text-decoration: none; /* in case you use an <a> tag with this class */
+  text-decoration: none;  /* For <a> tag */
 }
 
 .signInButton:hover {
   transform: translateY(-3px);
-  background-color: rgba(var(--callout-rgb), 0.9);
+  background-color: rgba(var(--callout-rgb), 0.9);  /* Slight variation in color for hover effect */
   box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
 }
 
+.signInButton:active {
+  transform: translateY(1px);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  .nav {
+      padding: 0.8rem 1rem;
+  }
+
+  .signInButton {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+      padding: 0.5rem 0.8rem;
+  }
+
+  .signInButton {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+  }
+}

@@ -1,33 +1,71 @@
 .footer {
     display: flex;
     width: 100%;
-    padding: 2rem 2rem; /* Increased padding for better spacing */
+    padding: 2rem 2rem;
     justify-content: space-between;
     align-items: center;
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(180deg, rgba(var(--background-start-rgb), 0.8), rgba(var(--background-end-rgb), 0.9));
-    border-top: 2px solid rgba(var(--tile-border-rgb), 0.1); /* Subtle top border for separation */
+    border-top: 2px solid rgba(var(--tile-border-rgb), 0.1);
+    transition: all var(--transition-speed);
 }
 
 .contact {
-    font-size: 1rem; /* Increased font size for better readability */
-    font-style: italic; /* Adding a bit of style */
+    font-size: 1rem;
+    font-style: italic;
+    transition: color var(--transition-speed);
+}
+
+.contact:hover {
+    color: rgba(var(--foreground-rgb), 0.8);
 }
 
 .socials {
     display: flex;
-    gap: 1.5rem; /* Increased gap for better separation */
+    gap: 1.5rem;
 }
 
 .socials a {
     text-decoration: none;
     margin: 0 0.5rem;
-    font-size: 1.2rem; /* Increase the size if you're using font icons */
-    transition: transform 0.2s ease, color 0.2s ease; /* Smooth transition for hover effects */
-    color: rgba(var(--foreground-rgb), 0.7); /* Slightly faded color to start with */
+    font-size: 1.2rem;
+    transition: transform var(--transition-speed), color var(--transition-speed);
+    color: rgba(var(--foreground-rgb), 0.7);
 }
 
 .socials a:hover {
-    transform: translateY(-3px); /* Slight upward lift on hover */
-    color: rgba(var(--foreground-rgb), 1); /* Full color on hover */
+    transform: translateY(-3px);
+    color: rgba(var(--foreground-rgb), 1);
+}
+
+/* Responsive Design for Footer */
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start; /* Aligned to start for a more balanced look on mobile */
+        padding: 1.5rem 1rem;
+    }
+
+    .contact {
+        margin-bottom: 1rem; /* Added spacing between contact and social links */
+    }
+
+    .socials {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1rem 0.8rem;
+    }
+
+    .contact {
+        font-size: 0.9rem;
+    }
+
+    .socials a {
+        font-size: 1rem; /* Adjusting icon font size */
+    }
 }

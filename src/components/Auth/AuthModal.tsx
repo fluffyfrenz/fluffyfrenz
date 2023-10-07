@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { auth, googleProvider } from "../../lib/firebase";
 import firebase from "firebase/compat/app";
+import { FaGooglePlus, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import styles from "./AuthModal.module.css";
 
 type AuthModalProps = {
@@ -44,12 +45,9 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                 onClick={(e) => e.stopPropagation()}
             >
                 {" "}
-                {/* This prevents the modal from closing when clicking inside */}
-                <button className={styles.closeButton} onClick={onClose}>
-                    &times;
-                </button>
-                <h2>Welcome</h2>
-                <p>Sign in to continue</p>
+                <h2>fluffz</h2>
+                <p>Your Pups New Favorite App! 🐾</p>
+
                 <input
                     type="email"
                     placeholder="Email"
@@ -64,16 +62,25 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     onChange={(e) => setPassword(e.target.value)}
                     className={styles.input}
                 />
+                <div>
                 <button onClick={signInWithEmail} className={styles.button}>
-                    Sign in
+                    LOG IN
                 </button>
+                </div>
+                <div>
                 <button onClick={signUpWithEmail} className={styles.button}>
-                    Sign up
+                    CREATE ACCOUNT
                 </button>
-                <p>Or sign in with</p>
-                <button onClick={signInWithGoogle} className={styles.button}>
-                    Google
-                </button>
+                </div>
+
+                <div>
+                    <button type="button" onClick={signInWithGoogle} className={styles.button} aria-label="Sign in with Google">
+                        <FaGooglePlus size={24}/>
+                    </button>
+                    <button type="button" className={styles.button} aria-label="Sign in with Facebook">
+                        <FaFacebook size={24}/>
+                    </button>
+                </div>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 // pages/index.tsx
 import React from 'react';
+import "@/styles/Home.module.css";
 import Header from '../components/Header/Header';
 import HeroSection from '../components/Hero/HeroSection';
 //import FeaturesSection from '../components/Features/FeaturesSection';
@@ -14,7 +15,6 @@ const Home: React.FC = () => {
     <div>
       <Header />
       <HeroSection />
-      <MapComponent />
       <ChatRoom />
       <Footer />
     </div>

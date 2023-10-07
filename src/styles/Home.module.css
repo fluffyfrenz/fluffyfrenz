@@ -1,27 +1,11 @@
-:root {
-  --max-width: 68.75rem;
-  --border-radius: 0.75rem;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  --foreground-rgb: 33, 37, 41;
-  --background-start-rgb: 245, 245, 245;
-  --background-end-rgb: 255, 255, 255;
-  --primary-glow: conic-gradient(from 180deg at 50% 50%, #ff885533 0deg, #ff550033 55deg, #ffaa8833 120deg, #ff770033 160deg, transparent 360deg);
-  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(#00000080, #00000040, #00000030, #00000020, #00000010, #00000010, #00000080);
-  --callout-rgb: 255, 225, 200;
-  --callout-border-rgb: 200, 150, 100;
-  --card-rgb: 250, 240, 230;
-  --card-border-rgb: 200, 150, 100;
-}
+/* Use global root variables; so no local :root declaration is needed here */
 
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem 2rem; 
   min-height: 100vh;
   background-color: rgb(var(--background-start-rgb));
 }
@@ -63,10 +47,10 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
-  width: var(--max-width);
-  max-width: 100%;
-  margin: 1rem 0;
+  gap: 1.5rem; 
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 2rem 0; 
 }
 
 .card {
@@ -108,6 +92,13 @@
   padding: 4rem 0;
 }
 
+.center::before, .center::after {
+  left: 50%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
@@ -115,10 +106,6 @@
   height: 360px;
   margin-left: -400px;
   content: '';
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
 }
 
 .center::after {
@@ -127,15 +114,11 @@
   height: 180px;
   z-index: -1;
   content: '';
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover span {
-    transform: translateX(4px);
+    transform: translateX(5px); 
   }
 }
 
@@ -147,11 +130,11 @@
 
 @media (max-width: 700px) {
   .main {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem; 
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
@@ -159,14 +142,6 @@
 
   .card {
     padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
   }
 
   .center::before {
@@ -178,37 +153,8 @@
     font-size: 0.8rem;
   }
 
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(to bottom, rgba(var(--background-start-rgb), 1), rgba(var(--callout-rgb), 0.5));
-    background-clip: padding-box;
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(to bottom, transparent 0%, rgb(var(--background-end-rgb)) 40%);
-    z-index: 1;
+  .description a, .description p {
+    padding: 0.8rem;  
   }
 }
 
@@ -219,12 +165,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo,
-  .thirteen img {
+  .vercelLogo, .logo, .thirteen img {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
