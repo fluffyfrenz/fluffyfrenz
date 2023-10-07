@@ -1,0 +1,98 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(135deg, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-speed);
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.title:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: rgba(var(--foreground-rgb), 0.8);
+}
+
+.featuresButton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(var(--foreground-rgb));
+    background-color: rgba(var(--callout-rgb), 0.8);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.featuresButton:hover {
+    transform: translateY(-3px);
+    background-color: rgba(var(--callout-rgb), 0.9);
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featuresButton:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness adjustments */
+
+@media (max-width: 768px) {
+    .features {
+        padding: 4rem 1rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .featuresButton {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        padding: 3rem 0.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .featuresButton {
+        padding: 0.4rem 0.8rem;
+    }
+}

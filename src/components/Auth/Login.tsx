@@ -1,6 +1,6 @@
 // components/Login.tsx
 import React, { useState } from 'react';
-import { auth } from '../../lib/firebase';
+import { auth } from '@/lib/firebase';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');

@@ -1,10 +1,10 @@
 // components/AuthModal.tsx
 
 import React, { useEffect, useState } from "react";
-import { auth, googleProvider } from "../../lib/firebase";
+import { auth, googleProvider } from "@/lib/firebase";
 import firebase from "firebase/compat/app";
 import { FaGooglePlus, FaFacebook, FaLinkedin } from 'react-icons/fa';
-import styles from "./AuthModal.module.css";
+import styles from "@/styles/AuthModal.module.css";
 
 type AuthModalProps = {
     onClose: () => void;

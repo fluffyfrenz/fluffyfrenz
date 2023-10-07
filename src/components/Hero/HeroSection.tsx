@@ -1,6 +1,6 @@
 // components/Hero.tsx
 import React from "react";
-import styles from "./Hero.module.css";
+import styles from "@/styles/Hero.module.css";
 
 const HeroSection: React.FC = () => {
     return (

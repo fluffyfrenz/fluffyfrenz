@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, useLoadScript } from '@react-google-maps/api';
-import googleMapsConfig from "../../config/googleMapsConfig";
+import googleMapsConfig from "@/config/googleMapsConfig";
 
 const apiKey = googleMapsConfig.apiKey || 'YOUR_FALLBACK_API_KEY';
 

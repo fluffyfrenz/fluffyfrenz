@@ -1,10 +1,10 @@
 // components/NavBar.tsx
 import React, { useEffect, useState } from "react";
-import { auth } from "../../lib/firebase";
+import { auth } from "@/lib/firebase";
 import firebase from "firebase/compat/app";
 import Logout from "../Auth/Logout";
 import AuthModal from "../Auth/AuthModal";
-import styles from "./NavBar.module.css";
+import styles from "@/styles/NavBar.module.css";
 
 const NavBar: React.FC = () => {
     const [user, setUser] = useState<firebase.User | null>(null);
@@ -30,10 +30,12 @@ const NavBar: React.FC = () => {
                 {user ? (
                     <>
                         <div>
+                            Google Maps
+                        </div>
+                        <div>
                             Welcome, {user.displayName || user.email}
                             <Logout />
                         </div>
-                        
                     </>
                 ) : (
                     <>
@@ -43,7 +45,9 @@ const NavBar: React.FC = () => {
                         >
                             Sign in
                         </button>
-                        {showModal && <AuthModal onClose={() => setShowModal(false)} />}
+                        {showModal && (
+                            <AuthModal onClose={() => setShowModal(false)} />
+                        )}
                     </>
                 )}
             </div>

@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, FormEvent } from "react";
-import { db } from "../../lib/firebase";
+import { db } from "@/lib/firebase";
 import firebase from "firebase/compat/app";
-import { Message } from "../../types/chat";
-import { useAuth } from "../../context/AuthContext";
-
-import styles from "./ChatRoom.module.css"; // Assuming you've added corresponding styles in this CSS module
+import { Message } from "@/types/chat";
+import { useAuth } from "@/context/AuthContext";
+import styles from "@/styles/ChatRoom.module.css"; 
 
 function ChatRoom() {
     const [messages, setMessages] = useState<Message[]>([]);
